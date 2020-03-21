@@ -7,7 +7,7 @@ type Params = {
 
 const restaurantsByCity = async (_: any, { cityID }: Params) => {
     try {
-        const restaurants = await knex('restaurants').where({ city_code: cityID });
+        const restaurants = await knex('restaurants').where({ city_id: cityID });
         return restaurants;
     }
     catch (e) {

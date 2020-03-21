@@ -2,6 +2,10 @@ export {};
 
 const typeDefs: string = `
     scalar Date
+    
+    type ErrorType {
+        message: String!
+    }
 
     type ServiceCategories {
         id: ID!
@@ -12,6 +16,7 @@ const typeDefs: string = `
         id: ID!
         categoryId: Int!
         type: String!
+        owners: [Users]
     }
     
     type Continents {
@@ -35,6 +40,8 @@ const typeDefs: string = `
         id: ID!
         firstName: String!
         lastName: String!
+        apartments: [Apartments]
+        events: [Events]
     }
     
     type Events {
@@ -75,7 +82,7 @@ const typeDefs: string = `
     
     type LoginType {
         token: String
-        message: String!
+        error: ErrorType
     }
     
     input UserInput {

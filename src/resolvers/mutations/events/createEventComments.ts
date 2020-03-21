@@ -13,10 +13,10 @@ const createEventComment = async (_: any, { input: { event_id, owner_id, text } 
     try {
         const comment = await knex('event_comments')
             .insert({ event_id, owner_id, text })
-            .returning(['id', 'eventId', 'ownerId', 'text', 'createdAt']);
+            .returning(['id', 'eventId', 'ownerId', 'text', 'createdAt'])
+            .first();
 
-        if (comment.length === 1) return comment[0];
-        return [];
+        return comment;
     }
     catch (e) {
         console.log("comment error", e);

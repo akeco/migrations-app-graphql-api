@@ -15,6 +15,7 @@
   "dependencies": {
     "aws-sdk": "^2.628.0",
     "bcrypt": "^4.0.0",
+    "dataloader": "^2.0.0",
     "dotenv": "^8.2.0",
     "faker": "^4.1.0",
     "graphql-middleware-apollo-upload-server": "^1.0.10",

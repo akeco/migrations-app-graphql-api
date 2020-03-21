@@ -1,5 +1,5 @@
 export {};
-const Authentication = require('../utils/Authentication');
+const Authentication = require('../services/Authentication');
 const Auth = new Authentication();
 
 const authentication = async (resolve: Function, root: {}, args: {}, context: { request: { get: Function } }, info: {}) : Promise<string | Error> => {

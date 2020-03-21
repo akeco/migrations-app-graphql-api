@@ -7,7 +7,7 @@ type Params = {
 
 const servicesByOwnersCity = async (_: any, { cityID }: Params) => {
     try {
-        const services = await knex('services').join('users', 'users.id', '=', 'services.owner_id').where({ city_code: cityID });
+        const services = await knex('services').join('users', 'users.id', '=', 'services.owner_id').where({ city_id: cityID });
         return services;
     }
     catch (e) {

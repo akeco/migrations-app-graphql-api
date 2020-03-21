@@ -5,8 +5,8 @@ const { decodeToken } = require('./middlewares/authentication');
 const { logInput, logResult } = require('./middlewares/logger');
 
 const server: {
-    close: any,
-    start: any,
+    close: Function,
+    start: Function,
 } = new GraphQLServer({
     typeDefs,
     resolvers,

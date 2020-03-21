@@ -7,7 +7,7 @@ type Params = {
 
 const usersFromCity = async (_: any, {cityID}: Params) => {
     try {
-        const users = await knex('users').where({ city_code: cityID });
+        const users = await knex('users').where({ city_id: cityID });
         return users;
     }
     catch (e) {

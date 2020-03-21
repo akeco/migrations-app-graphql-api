@@ -39,9 +39,9 @@ const createApartment = async (_: any, { input: {
                 country_code: countryCode,
                 city_id: cityId
             })
-            .returning(['*']);
+            .returning(['*'])
+            .first();
 
-        if (apartments.length === 1) return apartments[0];
         return apartments;
     }
     catch (e) {

@@ -54,9 +54,9 @@ const createEvent = async (_: any, { input: {
                 origin_country_code: originCountryCode,
                 city_id: cityId
             })
-            .returning(['*']);
+            .returning(['*'])
+            .first();
 
-        if (events.length === 1) return events[0];
         return events;
     }
     catch (e) {

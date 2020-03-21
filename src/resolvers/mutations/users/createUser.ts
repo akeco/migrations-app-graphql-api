@@ -1,6 +1,6 @@
 export {};
 const knex = require('../../../../config/db.js');
-const Authorization = require('../../../utils/Authentication');
+const Authorization = require('../../../services/Authentication');
 
 type Params = {
     input: {
@@ -42,8 +42,11 @@ const createUser = async (_: any, { input: {
             city_id: cityId,
             origin_city_id: originCityId,
             coordinates: knex.postgis.setSRID(knex.postgis.makePoint(lng, lat), 4326),
-        }).returning(['id', 'firstName', 'lastName']);
-        return user[0];
+        })
+            .returning(['id', 'firstName', 'lastName'])
+            .first();
+
+        return user;
     }
     catch (e) {
         console.log("user error", e);

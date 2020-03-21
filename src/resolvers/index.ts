@@ -99,6 +99,16 @@ const resolvers: Object = {
         apartmentsByOwner,
         apartmentsByRent
     },
+    Events: {
+        owners: usersById
+    },
+    Services: {
+        owners: usersById
+    },
+    Users: {
+        apartments: apartmentsByOwner,
+        events: eventsByOwner,
+    }
 };
 
 module.exports = resolvers;

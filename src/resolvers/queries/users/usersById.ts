@@ -5,9 +5,12 @@ type Params = {
     userID: number
 }
 
-const usersById = async (_: any, {userID}: Params) => {
+const usersById = async (parent : any, {userID}: Params) => {
+
+    console.log("PAR", parent)
     try {
-        const users = await knex('users').where({ id: userID });
+        let id = parent.id || userID;
+        const users = await knex('users').where({ id });
         return users;
     }
     catch (e) {
